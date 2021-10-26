@@ -11,11 +11,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-family: 'Teko', sans-serif;
 }
 
+h1{
+  font-size: 5vh;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-style: italic;
+  margin: 2% 0% 0% 5%;
+}
+
 h2{
   font-size: 4vh;
   letter-spacing: 2px;
 }
 
+h3{
+  text-align: center;
+}
 
 a {
   color: inherit;

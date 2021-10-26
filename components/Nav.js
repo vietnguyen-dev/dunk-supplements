@@ -15,7 +15,6 @@ const NavBar = styled.ul`
 const NavLink = styled.a`
   padding: 1%;
   margin:1%;
-  border-bottom: 1px solid grey
 `
 
 export const Nav = () => {
