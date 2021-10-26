@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from "next/image";
-
 import Logo from './UI/Logo';
 import styled from "styled-components";
 
@@ -20,13 +19,13 @@ const HeaderItems = styled.div`
     margin: 7% 15% 7% 0%;
 `
 
-const CartContainer = () => {
+const CartContainer = ({settingCart}) => {
     return (
       <CartHeader>
         <HeaderItems>
           <Logo />
         </HeaderItems>
-        <HeaderItems className="center">
+        <HeaderItems className="center" onClick={settingCart}>
           <Image
             src={"/cart.png"}
             height={32}

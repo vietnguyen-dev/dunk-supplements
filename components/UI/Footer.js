@@ -36,8 +36,8 @@ const Footer = () => {
                 alt="link to our official twitter account"
               />
             </IconContainer>
-             <IconContainer>
-               <Image
+            <IconContainer>
+              <Image
                 src="/facebook-32.png"
                 height={32}
                 width={32}
@@ -45,13 +45,13 @@ const Footer = () => {
               />
             </IconContainer>
             <IconContainer>
-            <Image
-              src="/instagram-32.png"
-              height={32}
-              width={32}
-              alt="link to our official twitter account"
-            />
-             </IconContainer>
+              <Image
+                src="/instagram-32.png"
+                height={32}
+                width={32}
+                alt="link to our official twitter account"
+              />
+            </IconContainer>
           </Socials>
         </Logos>
       </Foot>

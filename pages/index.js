@@ -27,7 +27,7 @@ export default function Home() {
           <h3>SNACKS</h3>
         </Card>
 
-        <Link href='/Protein'>
+        <Link href='/protein'>
           <a>
             <Card>
               <Image
