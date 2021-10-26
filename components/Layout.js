@@ -25,11 +25,9 @@ const Layout = ({title, children}) => {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main>
-          <CartContainer settingCart={settingCart} />
-          <Cart status={cart} settingCart={settingCart} />
-          <Wrapper>{children}</Wrapper>
-        </main>
+        <CartContainer settingCart={settingCart} />
+        <Cart status={cart} settingCart={settingCart} />
+        <Wrapper>{children}</Wrapper>
       </>
     );
 }

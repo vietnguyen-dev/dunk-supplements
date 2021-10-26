@@ -17,6 +17,8 @@ export default function Home() {
     <Layout title={"Home"}>
       <Hero />
       <LinkToPages id="shop">
+        <Link href='/snacks'>
+          <a>
         <Card>
           <Image
             src={"/protein-bar.png"}
@@ -26,6 +28,8 @@ export default function Home() {
           />
           <h3>SNACKS</h3>
         </Card>
+        </a>
+        </Link>
 
         <Link href='/protein'>
           <a>
@@ -41,6 +45,8 @@ export default function Home() {
           </a>
         </Link>
 
+        <Link href='/creatine'>
+          <a>
         <Card>
           <Image
             src={"/protein-bar.png"}
@@ -50,6 +56,8 @@ export default function Home() {
           />
           <h3>CREATINE</h3>
         </Card>
+        </a>
+        </Link>
       </LinkToPages>
       <Foot />
     </Layout>

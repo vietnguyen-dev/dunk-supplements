@@ -7,13 +7,15 @@ const ToggleButton = styled.button`
 `
 
 const Bar = styled.hr`
-  width: 10vw;
-  border-top: 3px solid black;
+  width: 8vw;
+  border-top: 2px solid black;
+  color: black;
   transform: rotateZ(45deg) translateY(7px);
 `;
 const Bar2 = styled.hr`
-  width: 10vw;
-  border-top: 3px solid black;
+  width: 8vw;
+  border-top: 2px solid black;
+  color: black;
   transform: rotateZ(-45deg) translateY(-7px);
 `;
 

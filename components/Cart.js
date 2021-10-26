@@ -4,12 +4,12 @@ import CartItem from './UI/CartItem';
 import Close from './UI/Close';
 
 const CartContainer = styled.div`
-  height: 87vh;
+  height: 89vh;
   width: 95vw;
   margin: 3%;
   border-radius: 10px;
   background-color: white;
-  padding: 5%;
+  padding: 1% 3%;
 `;
 
 const CartBackground = styled.div`
@@ -39,7 +39,7 @@ const ForwardButton = styled.button`
 
 const Checkout = styled.div`
     position: absolute;
-    bottom: 15%;
+    bottom: 13%;
     width: 85%;
     overflow: hidden;
 `
@@ -54,8 +54,7 @@ let current = [
     name: "DUNK Low Sugar Cookies - 20 Count",
     img: '/cookies.jpg',
     price: 9.99,
-    description:
-      "Made with 80% less sugar. Guranteed to fill your sugar cravings without the sugar effects!",
+    amount: 4,
   },
 ];
 
@@ -74,12 +73,12 @@ const Cart = ({status, settingCart}) => {
                         img={item.img}
                         name={item.name}
                         price={item.price}
-                        description={item.description}
+                        amount={item.amount}
                     />
                 )}
             </ItemContainer> 
            <Checkout>
-           <h2 style={{textAlign: `right`}}>subtotal: </h2>
+           <h2>subtotal: </h2>
            <ForwardButton>CHECKOUT </ForwardButton>
            </Checkout>
         </CartContainer>

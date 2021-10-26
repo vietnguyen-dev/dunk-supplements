@@ -35,6 +35,11 @@ const ShopButton = styled.button`
   background-color: black;
 `;
 
+const ShopLink = styled.a`
+  letter-spacing: 3px;
+  padding: 0;
+`
+
 const Hero = () => {
     return (
       <>
@@ -54,8 +59,7 @@ const Hero = () => {
           </div>
           <div className="center">
             <ShopButton className="center">
-              {" "}
-              <a href="#shop">SHOP NOW</a>
+              <ShopLink href="#shop">SHOP NOW</ShopLink>
             </ShopButton>
           </div>
         </HeroContainer>
