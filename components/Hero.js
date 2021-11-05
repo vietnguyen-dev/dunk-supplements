@@ -3,10 +3,9 @@ import Image from 'next/image';
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
-  position: relative;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  background-color: black;
 `;
 
 const HeroHead = styled.h1`
@@ -15,7 +14,6 @@ const HeroHead = styled.h1`
     font-size: 6vh;
     font-style: italic;
     letter-spacing: 5px;
-    position: relative;
     line-height: .8;
     font-weight: bold;
 `
@@ -26,7 +24,6 @@ const HeroSpan = styled.span`
 `;
 
 const ShopButton = styled.button`
-  position: relative;
   padding: 4% 9%;
   border: 3px solid #FFAF19;
   color: white;
@@ -44,13 +41,6 @@ const Hero = () => {
     return (
       <>
         <HeroContainer>
-          <Image
-            alt="Runner"
-            src="/runner.jpg"
-            layout="fill"
-            //   objectFit="cover"
-            quality={100}
-          />
           <div className="center">
             <HeroHead>
               DUNK <br />
