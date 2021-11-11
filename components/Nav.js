@@ -13,8 +13,9 @@ const NavBar = styled.ul`
 `
 
 const NavLink = styled.a`
-  padding: 1%;
-  margin:1%;
+  padding: .5%;
+  margin: 2%;
+  border-bottom: 1px solid grey;
 `
 
 export const Nav = () => {
@@ -22,13 +23,13 @@ export const Nav = () => {
       <>
         <NavContainer>
           <NavBar>
-            <Link href='/protein'>
+            <Link href="/categories/protein">
               <NavLink>PROTEIN</NavLink>
             </Link>
-            <Link href='/creatine'>
+            <Link href="/categories/creatine">
               <NavLink>CREATINE</NavLink>
             </Link>
-            <Link href='/snacks'>
+            <Link href="/categories/snacks">
               <NavLink>SNACKS</NavLink>
             </Link>
           </NavBar>

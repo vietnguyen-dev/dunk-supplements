@@ -1,6 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
-
+import Link from 'next/link'
 import Card from './Card';
 
 import styled from "styled-components";
@@ -24,24 +23,23 @@ const Price = styled.p`
   font-size: 2.5vh;
 `;
 
-const PageItem = ({img, name, price, description}) => {
+const PageItem = ({img, name, price, description, link}) => {
     return (
+      <Link href={`/products/${link}`}> 
+      <a>
         <Card>
-            <ItemContainer>
-                <Image 
-                    src={img}
-                    width={64}
-                    height={64}
-                    alt={description}
-                />
-                <TextContainer>
-                    <Title>{name}</Title>
-                    <Price>$ {price}</Price>
-                    <p>{description}</p>
-                </TextContainer>
-            </ItemContainer>
+          <ItemContainer>
+            <img src={img} alt={description} />
+            <TextContainer>
+              <Title>{name}</Title>
+              <Price>$ {price}</Price>
+              {description}
+            </TextContainer>
+          </ItemContainer>
         </Card>
-    )
+        </a>
+      </Link>
+    );
 }
 
 export default PageItem

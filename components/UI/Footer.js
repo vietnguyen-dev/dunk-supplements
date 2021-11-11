@@ -20,6 +20,7 @@ const Socials = styled.div`
 
 const IconContainer = styled.div`
   margin: 0% 5% 0% 5%;
+  padding: 3%;
 `
 
 const Footer = () => {

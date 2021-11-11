@@ -3,13 +3,12 @@ import Image from 'next/image';
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 45vh;
   background-color: black;
 `;
 
 const HeroHead = styled.h1`
-    margin: 25%;
+    margin: 20%;
     color: white;
     font-size: 6vh;
     font-style: italic;

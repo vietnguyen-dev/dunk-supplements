@@ -1,4 +1,5 @@
 import React from 'react'
+import { useCartState } from '../context/cart-context';
 import styled from "styled-components";
 import CartItem from './UI/CartItem';
 import Close from './UI/Close';
@@ -10,6 +11,17 @@ const CartContainer = styled.div`
   border-radius: 10px;
   background-color: white;
   padding: 1% 3%;
+`;
+
+const CartConnector = styled.div`
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  transform: translate(-10px, -20px);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid white;
 `;
 
 const CartBackground = styled.div`
@@ -48,39 +60,33 @@ const ItemContainer = styled.div`
     border: 1x solid grey;
 `
 
-let current = [
-  {
-    id: 0,
-    name: "DUNK Low Sugar Cookies - 20 Count",
-    img: '/cookies.jpg',
-    price: 9.99,
-    amount: 4,
-  },
-];
-
 const Cart = ({status, settingCart}) => {
+    const cart = useCartState()
+
     return (
       <CartBackground className={`${status ? `shown` : `hidden`}`}>
+        <CartConnector />
         <CartContainer>
-           <CartOpen> 
-               <h2>CART</h2>
-                <Close clickEvent={settingCart} />
-           </CartOpen>
-           <ItemContainer>
-               {current.map(item => 
-                    <CartItem 
-                        key={item.id}
-                        img={item.img}
-                        name={item.name}
-                        price={item.price}
-                        amount={item.amount}
-                    />
-                )}
-            </ItemContainer> 
-           <Checkout>
-           <h2>subtotal: </h2>
-           <ForwardButton>CHECKOUT </ForwardButton>
-           </Checkout>
+          <CartOpen>
+            <h2>CART</h2>
+            <Close clickEvent={settingCart} />
+          </CartOpen>
+          <ItemContainer>
+            {cart.state.line_items.map((item) => (
+              <CartItem
+                key={item.id}
+                id={item.id}
+                img={item.image.url}
+                name={item.name}
+                price={item.price.formatted}
+                amount={item.quantity}
+              />
+            ))}
+          </ItemContainer>
+          <Checkout>
+            {/* <h2>subtotal: {cart.state.subtotal.formatted}</h2> */}
+            <ForwardButton>CHECKOUT </ForwardButton>
+          </Checkout>
         </CartContainer>
       </CartBackground>
     );

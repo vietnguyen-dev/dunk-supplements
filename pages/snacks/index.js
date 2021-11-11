@@ -4,34 +4,42 @@ import { ProductIndex } from '../../components/UI/ProductIndex'
 import PageItem from "../../components/UI/PageItem";
 import { Nav } from "../../components/Nav";
 
-// let dummmySnacks = [
-//   {
-//     id: 0,
-//     name: "DUNK Sugarless Cookies - 20 Count",
-//     price: 10.0,
-//     description:
-//       "Made with 80% less sugar. Guranteed to fill your sugar cravings without the sugar effects!",
-//     img: '/cookies.jpg'
-//   },
-// ];
+import commerce from '../../lib/commerce'
 
-export default function Snacks () {
+export default function Snacks ({products}) {
+
+  console.log(products)
+
   return (
     <Layout title="Shop Snacks Products">
       <ProductIndex>
         <Nav />
         <h1>SNACKS</h1>
         <div>
-          {/* {dummmySnacks.map(({id, name, price, description, img}) => <
-            PageItem 
-              key={id}
-              name={name}
-              price={price}
-              description={description}
-              img={img}
-            />) } */}
+          {products.map((product) => 
+            <PageItem 
+                key={product.id}
+                name={product.name}
+                price={product.price.formatted}
+                description={product.description}
+                img={product.image.url}
+            />
+          )}
         </div>
       </ProductIndex>
     </Layout>
   );
 };
+
+export async function getStaticProps(){
+  const {data: products} = await commerce.products.list({
+    category_slug: [`snacks`]
+  })
+
+  return{
+    props: {
+      products
+    }
+  }
+
+}
