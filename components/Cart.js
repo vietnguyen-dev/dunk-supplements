@@ -1,8 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 import { useCartState } from '../context/cart-context';
 import styled from "styled-components";
 import CartItem from './UI/CartItem';
 import Close from './UI/Close';
+
+import commerce from '../lib/commerce';
 
 const CartContainer = styled.div`
   height: 89vh;
@@ -51,8 +54,8 @@ const ForwardButton = styled.button`
 
 const Checkout = styled.div`
     position: absolute;
-    bottom: 13%;
-    width: 85%;
+    bottom: 11%;
+    width: 90%;
     overflow: hidden;
 `
 
@@ -62,6 +65,14 @@ const ItemContainer = styled.div`
 
 const Cart = ({status, settingCart}) => {
     const cart = useCartState()
+    const { state } = cart
+    const { id } = state
+    
+    // const getCheckOutToken = () =>{
+    //   commerce.checkout
+    //     .generateToken(id, { type: "cart" })
+    //     .then((checkout) => console.log(checkout));
+    // }
 
     return (
       <CartBackground className={`${status ? `shown` : `hidden`}`}>
@@ -85,7 +96,13 @@ const Cart = ({status, settingCart}) => {
           </ItemContainer>
           <Checkout>
             {/* <h2>subtotal: {cart.state.subtotal.formatted}</h2> */}
-            <ForwardButton>CHECKOUT </ForwardButton>
+            <ForwardButton>
+              <Link href={`/checkout/?id=${id}`}>
+              <a>
+              PROCEED TO CHECKOUT
+              </a>
+              </Link>
+            </ForwardButton>
           </Checkout>
         </CartContainer>
       </CartBackground>
